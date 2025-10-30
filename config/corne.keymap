@@ -8,6 +8,32 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        toggle_lang: lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp SPACE>;
+
+            label = "LANG";
+        };
+
+        raycast: raycast {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp SPACE>;
+
+            label = "RAYCAST";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
